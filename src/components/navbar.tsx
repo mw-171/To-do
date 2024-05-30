@@ -8,6 +8,7 @@ import {
 } from "../firebase/auth";
 import { usePathname, useRouter } from "next/navigation";
 import { User } from "firebase/auth";
+import { ArrowRightIcon } from "@heroicons/react/16/solid";
 
 export const useUserSession = (initialUser?: User) => {
   const [user, setUser] = useState(initialUser);
@@ -86,14 +87,14 @@ const Header: React.FC<IProps> = ({ initialUser }) => {
           <a
             href="#"
             onClick={redirectHome}
-            className="text-xl sm:text-2xl border-2 border-brown p-2 transition-colors hover:bg-brown hover:text-lightBlue"
+            className="group rounded-lg border border-transparent px-4 py-3 font-semibold transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             Home
           </a>
           <a
             href="#"
             onClick={handleSignOut}
-            className="text-xl sm:text-2xl border-2 border-brown p-2 transition-colors hover:bg-brown hover:text-lightBlue"
+            className="group rounded-lg border border-transparent px-4 py-3 font-semibold transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             Sign Out
           </a>
@@ -102,9 +103,12 @@ const Header: React.FC<IProps> = ({ initialUser }) => {
         <a
           href="#"
           onClick={handleSignIn}
-          className="text-xl sm:text-2xl p-2 font-semibold transition-colors hover:bg-white-50"
+          className="group rounded-lg border border-transparent px-4 py-3 font-semibold transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
-          Sign Up / Log in
+          Sign up / Log in{" "}
+          <span>
+            <ArrowRightIcon className="w-5 h-5 font-semibold inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none" />
+          </span>
         </a>
       )}
     </header>
