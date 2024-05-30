@@ -81,36 +81,38 @@ const Header: React.FC<IProps> = ({ initialUser }) => {
   }, [user]);
 
   return (
-    <header className="absolute right-5 top-5">
-      {user ? (
-        <div className="flex gap-4">
+    <header className="w-full h-16 shadow-lg shadow-gray-900">
+      <div className="absolute right-5 top-5">
+        {user ? (
+          <div className="flex-row gap-4">
+            <a
+              href="#"
+              onClick={redirectHome}
+              className="group rounded-lg border border-transparent px-4 py-3 font-semibold transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            >
+              Home
+            </a>
+            <a
+              href="#"
+              onClick={handleSignOut}
+              className="group rounded-lg border border-transparent px-4 py-3 font-semibold transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            >
+              Sign Out
+            </a>
+          </div>
+        ) : (
           <a
             href="#"
-            onClick={redirectHome}
+            onClick={handleSignIn}
             className="group rounded-lg border border-transparent px-4 py-3 font-semibold transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
-            Home
+            Sign up / Log in{" "}
+            <span>
+              <ArrowRightIcon className="w-5 h-5 font-semibold inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none" />
+            </span>
           </a>
-          <a
-            href="#"
-            onClick={handleSignOut}
-            className="group rounded-lg border border-transparent px-4 py-3 font-semibold transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          >
-            Sign Out
-          </a>
-        </div>
-      ) : (
-        <a
-          href="#"
-          onClick={handleSignIn}
-          className="group rounded-lg border border-transparent px-4 py-3 font-semibold transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        >
-          Sign up / Log in{" "}
-          <span>
-            <ArrowRightIcon className="w-5 h-5 font-semibold inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none" />
-          </span>
-        </a>
-      )}
+        )}
+      </div>
     </header>
   );
 };

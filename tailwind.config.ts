@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 const config: Config = {
+  plugins: [require("@headlessui/tailwindcss")],
   content: [
     "./*/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./*/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,7 +18,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
 };
 export default config;
 
