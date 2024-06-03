@@ -1,4 +1,4 @@
-"use client";
+"use client"; //refers to using client side rendering!
 
 import React, { useState, useEffect, MouseEvent } from "react";
 import {
@@ -81,7 +81,7 @@ const Header: React.FC<IProps> = ({ initialUser }) => {
   }, [user]);
 
   return (
-    <header className="w-full h-16 shadow-lg shadow-gray-900">
+    <header className="sm:w-full sm:h-16 shadow-lg shadow-gray-800">
       <div className="absolute right-5 top-5">
         {user ? (
           <div className="flex-row gap-4">

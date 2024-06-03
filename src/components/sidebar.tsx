@@ -1,32 +1,21 @@
 import { Fragment } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
-  ChevronDownIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/20/solid";
-import {
   Bars3Icon,
   BellIcon,
   CalendarIcon,
   Cog6ToothIcon,
-  DocumentDuplicateIcon,
   FolderIcon,
   HomeIcon,
   UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
-const userNavigation = [
-  { name: "Your profile", href: "#" },
-  { name: "Sign out", href: "#" },
-];
-
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: false },
-  { name: "Case Management", href: "#", icon: UsersIcon, current: false },
+  { name: "Home", href: "#", icon: HomeIcon, current: true },
+  { name: "To-Do", href: "#", icon: UsersIcon, current: false },
   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Document Vault", href: "#", icon: FolderIcon, current: false },
-  { name: "Popul8", href: "#", icon: DocumentDuplicateIcon, current: true },
+  { name: "Tracker", href: "#", icon: FolderIcon, current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -222,10 +211,10 @@ export function TopBar({
   setSidebarOpen: (value: boolean) => void;
 }) {
   return (
-    <div className="sticky absolute top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+    <div className="sticky absolute top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-gray-900 px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
       <button
         type="button"
-        className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
+        className="-m-2.5 p-2.5 text-gray-400 lg:hidden"
         onClick={() => setSidebarOpen(true)}
       >
         <span className="sr-only">Open sidebar</span>
