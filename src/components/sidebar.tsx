@@ -211,7 +211,7 @@ export function TopBar({
   setSidebarOpen: (value: boolean) => void;
 }) {
   return (
-    <div className="sticky absolute top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-gray-900 px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+    <div className="sticky absolute top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 bg-black px-4 shadow-lg shadow-gray-800 sm:gap-x-6 sm:px-6 lg:px-8">
       <button
         type="button"
         className="-m-2.5 p-2.5 text-gray-400 lg:hidden"

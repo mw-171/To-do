@@ -81,8 +81,8 @@ const Header: React.FC<IProps> = ({ initialUser }) => {
   }, [user]);
 
   return (
-    <header className="sm:w-full sm:h-16 shadow-lg shadow-gray-800">
-      <div className="absolute right-5 top-5">
+    <header className="z-50">
+      <div className="absolute right-5 top-5 z-50">
         {user ? (
           <div className="flex-row gap-4">
             <a
