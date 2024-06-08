@@ -5,42 +5,42 @@ import { SideBar, TopBar } from "@/src/components/sidebar";
 
 const people = [
   {
-    name: "Leslie Alexander",
-    email: "leslie.alexander@example.com",
+    task: "Do laundry",
+    date: "June 22",
     role: "Co-Founder / CEO",
     lastSeen: "3h ago",
     lastSeenDateTime: "2023-01-23T13:23Z",
   },
   {
-    name: "Michael Foster",
-    email: "michael.foster@example.com",
+    task: "Do dishes",
+    date: "June 22",
     role: "Co-Founder / CTO",
     lastSeen: "3h ago",
     lastSeenDateTime: "2023-01-23T13:23Z",
   },
   {
-    name: "Dries Vincent",
-    email: "dries.vincent@example.com",
+    task: "Finish cs assignment",
+    date: "June 22",
     role: "Business Relations",
     lastSeen: null,
   },
   {
-    name: "Lindsay Walton",
-    email: "lindsay.walton@example.com",
+    task: "Work on side project",
+    date: "June 7",
     role: "Front-end Developer",
     lastSeen: "3h ago",
     lastSeenDateTime: "2023-01-23T13:23Z",
   },
   {
-    name: "Courtney Henry",
-    email: "courtney.henry@example.com",
+    task: "Study for calc midterm",
+    date: "June 12",
     role: "Designer",
     lastSeen: "3h ago",
     lastSeenDateTime: "2023-01-23T13:23Z",
   },
   {
-    name: "Tom Cook",
-    email: "tom.cook@example.com",
+    task: "Apply to more jobs",
+    date: "June 2",
     role: "Director of Product",
     lastSeen: null,
   },
@@ -128,23 +128,23 @@ export default function Home() {
           <ul role="list" className="divide-y divide-gray-800">
             {people.map((person) => (
               <li
-                key={person.email}
+                key={person.date}
                 className="flex justify-between gap-x-6 py-5"
               >
                 <div className="flex min-w-0 gap-x-4">
                   <div className="min-w-0 flex-auto">
                     <p className="text-sm font-semibold leading-6 text-white">
-                      {person.name}
+                      {person.task}
                     </p>
                     <p className="mt-1 truncate text-xs leading-5 text-gray-500">
-                      {person.email}
+                      {person.date}
                     </p>
                   </div>
                 </div>
                 <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                   <p className="text-sm leading-6 text-white">{person.role}</p>
                   {person.lastSeen ? (
-                    <p className="mt-1 text-xs leading-5 text-gray-500">
+                    <p className="mt-1 text-xs leading-5 text-gray-500 rounded-md px-1 leading-6 bg-gray-800 text-gray-300">
                       Last seen{" "}
                       <time dateTime={person.lastSeenDateTime}>
                         {person.lastSeen}
